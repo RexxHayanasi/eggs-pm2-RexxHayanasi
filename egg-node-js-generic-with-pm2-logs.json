@@ -5,15 +5,15 @@
         "update_url": null
     },
     "exported_at": "2023-03-25T06:18:36-04:00",
-    "name": "Node.js generic with pm2 logs",
-    "author": "danelsonic123@serverargentina.com",
+    "name": "Hanzz premium Egggs",
+    "author": "farhanxd088@gmail.com",
     "description": "a generic node.js with pm2 egg\r\n\r\nThis will clone a git repo. it defaults to master if no branch is specified.\r\n\r\nInstalls the node_modules on install. If you set user_upload then I assume you know what you are doing.\r\n\r\nThis website official pm2 is https:\/\/pm2.io\/",
     "features": null,
     "docker_images": {
-        "Node.js 14 with pm2 logs": "ghcr.io\/danelsonic123\/nodejspm2:14",
-        "Node.js 16 with pm2 logs": "ghcr.io\/danelsonic123\/nodejspm2:16",
-        "Node.js 18 with pm2 logs": "ghcr.io\/danelsonic123\/nodejspm2:18",
-        "Node.js 19 with pm2 logs": "ghcr.io\/danelsonic123\/nodejspm2:19"
+        "Node.js 14 with pm2 logs": "ghcr.io\/HanzxXD\/nodejspm2:14",
+        "Node.js 16 with pm2 logs": "ghcr.io\/HanzxXD\/nodejspm2:16",
+        "Node.js 18 with pm2 logs": "ghcr.io\/HanzxXD\/nodejspm2:18",
+        "Node.js 19 with pm2 logs": "ghcr.io\/HanzxXD\/nodejspm2:19"
     },
     "file_denylist": [],
     "startup": "if [[ -d .git ]] && [[ {{AUTO_UPDATE}} == \"1\" ]]; then git pull; fi; if [[ ! -z ${NODE_PACKAGES} ]]; then \/usr\/local\/bin\/npm install ${NODE_PACKAGES}; fi; if [[ ! -z ${UNNODE_PACKAGES} ]]; then \/usr\/local\/bin\/npm uninstall ${UNNODE_PACKAGES}; fi; if [ -f \/home\/container\/package.json ]; then \/usr\/local\/bin\/npm install; fi; pm2 start {{JS_FILE}}; pm2 logs",
