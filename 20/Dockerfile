@@ -1,4 +1,4 @@
-FROM node:17-bullseye-slim
+FROM node:20-bullseye-slim
 
 LABEL author="RexxHayanasi" maintainer="rexxzynxd@yahoo.com"
 
