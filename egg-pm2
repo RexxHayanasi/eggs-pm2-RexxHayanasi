@@ -1,0 +1,46 @@
+{
+  "_comment": "Custom Egg by RexxHayanasi with full Bash access - No Git, No npm auto install",
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": null
+  },
+  "exported_at": "2025-07-25T00:00:00+00:00",
+  "name": "EGG PM2 Custom Startup Command",
+  "author": "RexxHayanasi",
+  "description": "Node.js Egg with full Bash startup. Use any command in console. Perfect for PM2, Bash, Node, etc. Credit Diganti = Yatim Piatu",
+  "features": null,
+  "docker_images": {
+    "Node.js 20 with PM2": "ghcr.io/RexxHayanasi/nodejspm2:20",
+    "Node.js 16 with PM2": "ghcr.io/RexxHayanasi/nodejspm2:19"
+    "Node.js 18 with PM2": "ghcr.io/RexxHayanasi/nodejspm2:18",
+    "Node.js 16 with PM2": "ghcr.io/RexxHayanasi/nodejspm2:17",
+  },
+  "file_denylist": [],
+  "startup": "{{CMD_RUN}}",
+  "config": {
+    "files": "{}",
+    "startup": "{\r\n    \"done\": \"Egg started with your custom command.\"\r\n}",
+    "logs": "{}",
+    "stop": "^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/bash\nmkdir -p /mnt/server\ncd /mnt/server\necho \"Upload atau clone file kamu secara manual. Tidak ada auto-install.\"\nexit 0",
+      "container": "node:20-bullseye-slim",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "Startup Command",
+      "description": "Masukkan command startup bebas, contoh: bash, bash start.sh, pm2 start bot.js",
+      "env_variable": "CMD_RUN",
+      "default_value": "bash",
+      "user_viewable": true,
+      "user_editable": true,
+      "required": true,
+      "rules": "required|string",
+      "field_type": "text"
+    }
+  ]
+}
